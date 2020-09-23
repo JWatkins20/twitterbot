@@ -86,7 +86,7 @@ plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 
 plt.savefig('wordcloud.png')
-#
-# api.PostUpdate("Here is a word cloud from " + "r/" + subreddit +" using the 'interesting' words from a " + str(numberofcomments) + " of the "
-# 				   "most recent comments posted to the sub. These comments were found at " + time_probed + ".",
-# 			   media= "wordcloud.png")
+
+api.PostUpdate("Here is a word cloud from " + "r/" + subreddit +" using the 'interesting' words from a " + str(numberofcomments) + " of the "
+				   "most recent comments posted to the sub. These comments were found at " + time_probed + ".",
+			   media= "wordcloud.png")
