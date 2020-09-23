@@ -22,7 +22,7 @@ boringwords = ["the", "a", "she", "he", "is", "was", "should", "said", "people",
 
 
 #Variables
-subreddit = "conservative"
+subreddit = "neoliberal"
 numberofcomments = 100
 
 
@@ -80,11 +80,11 @@ freqwords = ""
 for i in range(len(words)):
 	freqwords += (words[i] + ", ") * freq[words[i]]
 
-wordcloud = WordCloud(collocations=False, max_font_size=50, max_words=50, background_color="black").generate(freqwords)
-plt.figure()
-plt.imshow(wordcloud, interpolation='bilinear')
+wordcloud = WordCloud(width=800, height=400, collocations=False, max_font_size=100, max_words=50, background_color="black").generate(freqwords)
+plt.figure(figsize=(20,10), facecolor='k')
+plt.imshow(wordcloud)
 plt.axis("off")
-
+plt.tight_layout(pad=0)
 plt.savefig('wordcloud.png')
 
 api.PostUpdate("Here is a word cloud from " + "r/" + subreddit +" using the 'interesting' words from a " + str(numberofcomments) + " of the "
